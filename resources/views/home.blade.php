@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@php
+  $title = __('Dashboard')
+@endphp
+
+@extends('layouts.layout')
 
 @section('content')
 <div class="container">

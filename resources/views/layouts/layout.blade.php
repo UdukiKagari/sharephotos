@@ -17,7 +17,7 @@
   <body>
     <div id="app">
       {{-- GlobalNav --}}
-      <nav class="navbar justify-content-between bg-dark">
+      <nav class="navbar bg-dark">
         <a class="navbar-brand text-white" href="{{ url('/') }}">{{ config('app.name') }}</a>
         {{-- 認証関連リンク --}}
         @guest
@@ -25,14 +25,17 @@
             {{ __('Login') }}
           </a>
         @else
-          <a class="nav-item btn btn-primary" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="post">
-            @csrf
-          </form>
+          <div class="ml-auto">
+            <span class="nav-item text-white nav-username">{{ Auth::user()->name }}</span>
+            <a class="nav-item btn btn-primary" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="post">
+              @csrf
+            </form>
+          </div>
         @endguest
       </nav>
 
