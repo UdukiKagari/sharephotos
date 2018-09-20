@@ -25,9 +25,14 @@
             {{ __('Login') }}
           </a>
         @else
-          <a class="nav-item btn btn-primary" href="{{ route('logout') }}">
+          <a class="nav-item btn btn-primary" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
           </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="post">
+            @csrf
+          </form>
         @endguest
       </nav>
 
