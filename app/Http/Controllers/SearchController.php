@@ -13,10 +13,9 @@ class SearchController extends Controller
         $getQuery = Request::get('s');
         $query = str_replace("　"," ", $getQuery);
         $query = explode(" ", $query);
-
-        //echo '<pre>'.$getQuery.'</pre>';
-
-        return view('search.list');
+        var_dump($query);
+        return view('search.list', compact('query'));
+        //return view('search.list', compact('query'));
     }
 
 }

@@ -27,6 +27,11 @@
         @else
           <div class="ml-auto">
             <span class="nav-item text-white nav-username">{{ Auth::user()->name }}</span>
+            @if ( Auth::user()->name == 'admin')
+              <a  class="nav-item btn btn-primary" href="{{ route('register') }}">
+                {{ __('Register') }}
+              </a>
+            @endif
             <a class="nav-item btn btn-primary" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">

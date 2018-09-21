@@ -6,6 +6,7 @@
 
 @section('content')
 <div class="container">
-
+  {{ $query[0] }}
+  {{ $query[1] }}
 </div>
 @endsection
