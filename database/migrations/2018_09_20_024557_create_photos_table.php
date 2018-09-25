@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
             $table->increments('photo_id');
             $table->string('title');
             $table->date('shooting_date');
+            $table->enum('active',['0','1']);
             $table->timestamps();
         });
     }
